@@ -29,11 +29,11 @@ form do |f|
   tabs do
     tab 'General' do
       f.inputs 'Basic Details' do
-        f.input :name, :input_html => { :maxlength => 3 }
+        f.input :name
         f.input :description
         f.input :request_method, :as => :select, :collection => ["GET", "POST", "PUT", "PATCH", "DELETE"]
         f.input :status, :input_html => { :pattern => "^[0-9]+$", :maxlength => 3 }
-        f.input :response
+        f.input :route_path
       end
     end
 
@@ -45,7 +45,7 @@ form do |f|
 
     tab 'Advanced' do
       f.inputs 'Advanced Details' do
-        f.input :response
+        # f.input :response
       end
     end
   end
