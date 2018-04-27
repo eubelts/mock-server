@@ -22,7 +22,7 @@ index do
      # , render json: mock.response.to_json
   end
   column :status
-  column :response, as: :text, input_html: { class: 'jsoneditor-target' }
+  column :response
 end
 #
 # or
@@ -42,7 +42,7 @@ form do |f|
 
     tab 'Response' do
       f.inputs 'Response Properties' do
-        f.input :response
+        f.input :response, as: :text, input_html: { class: 'jsoneditor-target' }
       end
     end
 
