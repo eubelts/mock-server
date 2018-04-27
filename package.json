@@ -1,5 +1,7 @@
 {
   "name": "mock-server",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jsoneditor": "^5.14.1"
+  }
 }

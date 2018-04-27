@@ -2,7 +2,7 @@ ActiveAdmin.register Mock do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :name, :description, :request_method, :route_path, :status, :response
+permit_params :id, :name, :description, :request_method, :route_path, :status, :response
 
 # index do
 #   selectable_column
@@ -12,14 +12,17 @@ permit_params :name, :description, :request_method, :route_path, :status, :respo
 # end
 
 index do
-  column :name do |mock|
-    link_to mock.name
-  end
+  column :id
+  column :name
   column :description
   column :request_method
   column :route_path
+  column :route_path do |mock|
+    link_to mock.route_path
+     # , render json: mock.response.to_json
+  end
   column :status
-  column :response
+  column :response, as: :text, input_html: { class: 'jsoneditor-target' }
 end
 #
 # or

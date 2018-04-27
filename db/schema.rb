@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20180420051341) do
     t.string "request_method", null: false
     t.string "route_path", null: false
     t.string "status", null: false
-    t.string "response", null: false
+    t.json "response", default: {}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
