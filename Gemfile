@@ -8,13 +8,16 @@ end
 gem 'jquery-rails'
 gem 'pry'
 gem 'awesome_print'
-gem 'activeadmin'
 
+gem 'activeadmin'
 # Plus integrations with:
 gem 'devise'
 gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
+
+gem 'jsoneditor-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

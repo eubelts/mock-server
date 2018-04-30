@@ -9,8 +9,8 @@ $ ->
 
     editor = new JSONEditor container[0],
       modes: ['code', 'form', 'text', 'tree', 'view']
-      change: ->
-        target.val editor.get()
+      onChange: ->
+        target.val editor.getText()
 
     editor.set(
       try
@@ -18,6 +18,18 @@ $ ->
     )
 
     target.hide()
+
+    # options =
+    #   mode: 'code'
+    #   onError: (err) ->
+    #     alert err.toString()
+    #     return
+    #   onChange: ->
+    #     try
+    #       console.log JSON.stringify(editor.get())
+    #     catch err
+    #       console.error err
+    #     return
 
 # $ ->
 #
