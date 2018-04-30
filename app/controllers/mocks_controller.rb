@@ -3,12 +3,10 @@ class MocksController < ApplicationController
   def get_path
     url = request.path
     @mock = Mock.where(route_path: params[:path]).last
-
-    if @mock == url
-      if @mock.present?
+# binding.pry
+    if "/#{@mock.route_path}" == url
         @respon = @mock.response
-        render json: @respon.to_json
-      end
+        render json: @respon
     else
       #render error
     end
