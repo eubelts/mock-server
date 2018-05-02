@@ -10,7 +10,7 @@ $ ->
     editor = new JSONEditor container[0],
       modes: ['code', 'form', 'text', 'tree', 'view']
       onChange: ->
-        target.val editor.get()
+        target.val JSON.stringify(editor.get())
 
     editor.set(
       try
