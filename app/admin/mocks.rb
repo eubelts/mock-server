@@ -2,7 +2,8 @@ ActiveAdmin.register Mock do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :id, :name, :description, :request_method, :route_path, :status, :response
+permit_params :id, :name, :description, :request_method, :route_path, :status, :response,
+              headers_attributes: [:id, :name, :value, :_destroy]
 
 # index do
 #   selectable_column
@@ -23,6 +24,7 @@ index do
   #
   column :status
   column :response
+  actions
 end
 #
 # or
@@ -49,12 +51,22 @@ form do |f|
 
     tab 'Advanced' do
       f.inputs 'Advanced Details' do
-        # f.input :response
+          # f.input :name
+          # f.input :value
+     # end
+      # f.inputs :headers,
+      #            new_record: 'Add Header',
+      #            allow_destroy: true do |b|
+      #   b.input :name
+      #   end
       end
     end
+
   end
   f.actions
 end
+
+
 # f.input :authors, :as => :check_boxes, :collection => ["Justin", "Kate", "Amelia", "Gus", "Meg"]
 # permit_params do
 #   permitted = [:permitted, :attributes]

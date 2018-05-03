@@ -5,5 +5,7 @@ class Mock < ApplicationRecord
   validates :route_path, presence: true
   validates :status, presence: true
 
+  has_many :headers
+
 
 end

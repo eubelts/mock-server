@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420051341) do
+ActiveRecord::Schema.define(version: 20180503084517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20180420051341) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "headers", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "value", null: false
+    t.bigint "mock_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mock_id"], name: "index_headers_on_mock_id"
+  end
+
   create_table "mocks", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -40,4 +49,5 @@ ActiveRecord::Schema.define(version: 20180420051341) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "headers", "mocks", on_delete: :cascade
 end
