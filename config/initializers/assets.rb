@@ -15,4 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w[*.png *.jpg *gif *.js *.svg *.css]
 
-# Rails.application.config.assets.precompile += %w( jsoneditor-icons.svg )
+Rails.application.config.assets.precompile += %w( jsoneditor-icons.svg )
