@@ -39,7 +39,7 @@ form do |f|
         f.input :request_method, :as => :select, :collection => ["GET", "POST", "PUT", "PATCH", "DELETE"]
         f.input :status, :input_html => { :pattern => "^[0-9]+$", :maxlength => 3 }
         f.input :route_path
-        f.actions
+        # f.actions
       end
     end
 
